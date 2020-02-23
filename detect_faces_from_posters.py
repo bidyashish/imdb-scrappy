@@ -3,7 +3,7 @@ import os
 import json
 from skimage import io
 
-image_dir = "/Users/sundeepblue/movie/full"
+image_dir = "//Users/ashish/Desktop/jojo/movie/full"
 
 # populate image path
 files = os.listdir(image_dir)

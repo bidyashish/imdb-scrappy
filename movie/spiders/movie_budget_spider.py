@@ -18,7 +18,7 @@ class MovieBudgetSpider(scrapy.Spider):
     def parse(self, response):
         base_link = 'http://www.the-numbers.com'
 
-        print "=" * 50  
+        print ("=" * 50)  
         rows_in_big_table = response.xpath("//table/tr") 
         
         # now we only consider rows with odd index number, namely, skip useless rows
@@ -45,5 +45,5 @@ class MovieBudgetSpider(scrapy.Spider):
             movie_budget_item['domestic_gross'] = domestic_gross
             movie_budget_item['worldwide_gross'] = worldwide_gross
 
-            print "=" * 50 
+            print ("=" * 50 )
             yield movie_budget_item

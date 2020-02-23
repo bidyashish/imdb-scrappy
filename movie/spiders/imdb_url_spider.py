@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
-import urllib2
+import urllib3
+import urllib.parse
 from scrapy.selector import Selector
 from movie.items import ImdbUrlItem
 
@@ -19,7 +20,7 @@ class ImdbSearchUrlProvider():
         urls = []
         for m in movies:
             title = m['movie_name']
-            title_for_url = urllib2.quote(title.encode('utf-8'))
+            title_for_url = urllib.parse.quote(title.encode('utf-8'))
             imdb_search_link = "http://www.imdb.com/find?ref_=nv_sr_fn&q={}&s=tt".format(title_for_url)
             urls.append(imdb_search_link)
 

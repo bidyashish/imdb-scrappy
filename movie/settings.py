@@ -14,7 +14,7 @@ BOT_NAME = 'movie'
 SPIDER_MODULES = ['movie.spiders']
 NEWSPIDER_MODULE = 'movie.spiders'
 
-IMAGES_STORE = '/Users/sundeepblue/movie'
+IMAGES_STORE = '/Users/ashish/Desktop/jojo/dpk'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'movie (+http://www.yourdomain.com)'

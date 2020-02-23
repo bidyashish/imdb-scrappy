@@ -5,7 +5,7 @@ import json
 import locale
 import collections
 
-base_dir = "/Users/sundeepblue/movie"
+base_dir = "/Users/ashish/Desktop/jojo/movie"
 locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' ) 
 
 
@@ -58,8 +58,10 @@ def remove_non_ascii_chars_in_string(s):
 
 def load_unparsed_movie_metadata():
     try:
+        print("koko")
         with open(os.path.join(base_dir, "imdb_output.json"), "r") as f:
             movies = json.load(f)
+            print movies
             return movies
     except:
         print "Cannot load the unparsed movie metadata file!"

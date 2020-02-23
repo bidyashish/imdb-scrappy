@@ -4,7 +4,7 @@ import scrapy
 import random
 import json
 import locale
-import urllib2
+import urllib.parse
 from bs4 import BeautifulSoup
 
 from movie.items import MovieItem
@@ -18,7 +18,7 @@ class ImdbMovieUrlsProvider():
         pass
 
     def prepare_movie_urls(self):
-        with open("fetch_imdb_url.json", "r") as f:
+        with open("fetch_imdb_url11.json", "r") as f:
             movies = json.load(f)
         urls = [m['movie_imdb_link'] for m in movies]
         return urls
@@ -72,7 +72,7 @@ class ImdbSpider(scrapy.Spider):
         pass
 
     def parse(self, response):
-        print "*"*100
+        print ("*"*100)
         item = MovieItem()
         item['movie_imdb_link'] = response.url
 
@@ -92,7 +92,7 @@ class ImdbSpider(scrapy.Spider):
 
         # ---------------------------------------------------------------------------------------------------
         try:
-            genres = response.xpath('//div[@itemprop="genre"]//a/text()').extract()
+            genres = response.xpath('//a[contains(@href, "genre")]/text()').extract()[2]
         except:
             genres = None
         item['genres'] = genres
