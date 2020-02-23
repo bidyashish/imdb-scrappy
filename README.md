@@ -10,7 +10,6 @@
     8/14/2016
 
 
-===================================================================================
 # STEP 1: 
 
 Fetch a list of 5000 movie titles and budgets from www.the-numbers.com
@@ -109,3 +108,6 @@ Load the 'movie_metadata.csv' file in RStudio, and perform EDA and LASSO regress
 $ > run the RStudio
 
 $ > load the file 'movie_rating_prediction.R'
+=======
+# imdb-scrappy
+Python code to scrape IMDB Data, meta data, Images and titles
